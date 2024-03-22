@@ -1,8 +1,0 @@
-questa è una riga di dati
-anche questa è una riga di dati
-e pure questa
-questa riga è da saltare
-e questa è da tenere in considerazione
-
-
-#ce ne sono alcune vuote
