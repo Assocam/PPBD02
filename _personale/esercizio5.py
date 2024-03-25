@@ -53,15 +53,3 @@ for c in compiti:
         print(f'\nho trovato una figura sconosciuta: {figura}\n')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
