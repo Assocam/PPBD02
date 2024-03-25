@@ -4,11 +4,11 @@
 
 import os                # libreria di sistema operativo
 
-filename = os.path.abspath('dati.txt')
+filename = os.path.abspath('_personale\Appunti\Enrico\2024_03_22\dati.txt')
 print(filename)
 
 
-fr = open('dati.txt', 'r', encoding = 'utf-8')    # "fr" è l'apertura di quel file, 'r è read'
+fr = open('_personale\Appunti\Enrico\\2024_03_22\dati.txt', 'r', encoding = 'utf-8')    # "fr" è l'apertura di quel file, 'r è read'
 dati = fr.read()                                  # leggi il file
 fr.close()                                        # chiudilo
 

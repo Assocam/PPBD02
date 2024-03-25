@@ -37,7 +37,7 @@ def fibo(lunghezza):      # fibo è il simbolo
 
 # <------------ definito il simbolo ---------->7
 
-# lun = input('Inserire un numero: ')
-# lun = int(lun)
-# risultato = fibo(lun)
-# print(risultato)
+lun = input('Inserire un numero: ')
+lun = int(lun)
+risultato = fibo(lun)
+print(risultato)
