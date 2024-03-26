@@ -2,4 +2,7 @@ quadrato, lato=12
 rettangolo, base=7,altezza=8
 rettangolo, base=3,altezza=19
 quadrato, lato=33
+quadrato,lato=5
+trapezio,bmin=23,bmag=40,obliquo=22
 triangolo,base=40,altezza=30,lato1=40,lato2=50,lato3=30
+trapezio,bmin=10,bmag=12,obliquo=11

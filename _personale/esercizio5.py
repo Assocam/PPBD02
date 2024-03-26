@@ -53,22 +53,9 @@ for c in compiti:
                                                                                          #se splitto ('=') ottengo una lista
                                                                                          #'lato2'       elemento 0 della lista
                                                                                          #'50'          elemento 1 della lista
-        print(f'che ha base = {base}, altezza = {altezza} e lati{l1}, {l2}, {l3}')
-        p,a = triangolo(base,altezza,l1,l2,l3)
-        print(f'risultato: Area = {a} e perimetro = {p}')
-
-    else:
-        print(f'\nho trovato una figura sconosciuta: {figura}\n')
 
 
-    chiave = contatore
+  
 
-    dizio = [chiave] = {}
-    if figura == 'quadrato':
-    elif figura == 'rettangolo':
-    elif figura == 'triangolo':
-       
-    else:
-        dizio[chiave] = {'figura': figura}   
 
 print(dizio)        
