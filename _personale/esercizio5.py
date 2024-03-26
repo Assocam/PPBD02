@@ -4,8 +4,9 @@
 
 import os
 
+
 from esercizio3 import quadrato, rettangolo, triangolo
-nomeFile = 'C:\\Users\\marco\\OneDrive\\Desktop\\Lavoro git\\PPBD02\\a.txt'
+nomeFile = "C:\\Users\\marco\\OneDrive\\Desktop\\Lavoro git\\PPBD02\\_personale\\a.txt"
 
 nomeFileassoluto = os.path.abspath('a.txt')    
 
@@ -53,9 +54,6 @@ for c in compiti:
                                                                                          #se splitto ('=') ottengo una lista
                                                                                          #'lato2'       elemento 0 della lista
                                                                                          #'50'          elemento 1 della lista
-
-
-  
 
 
 print(dizio)        
