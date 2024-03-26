@@ -1,0 +1,3 @@
+nomeFileAssoluto = os.path.abspath('a.txt')
+
+Ecco come potremmo risolvere il problema della ricerca del file.
