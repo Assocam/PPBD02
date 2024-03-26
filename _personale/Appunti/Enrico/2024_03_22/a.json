@@ -1,0 +1,50 @@
+{
+    "1": {
+        "figura": "quadrato",
+        "lato": 12,
+        "area": 144,
+        "perimetro": 48
+    },
+    "2": {
+        "figura": "rettangolo",
+        "base": 7,
+        "altezza": 8,
+        "area": 56,
+        "perimetro": 30
+    },
+    "3": {
+        "figura": "rettangolo",
+        "base": 3,
+        "altezza": 19,
+        "area": 57,
+        "perimetro": 44
+    },
+    "4": {
+        "figura": "quadrato",
+        "lato": 33,
+        "area": 1089,
+        "perimetro": 132
+    },
+    "5": {
+        "figura": "quadrato",
+        "lato": 5,
+        "area": 25,
+        "perimetro": 20
+    },
+    "6": {
+        "figura": "trapezio"
+    },
+    "7": {
+        "figura": "triangolo",
+        "base": 40,
+        "altezza": 30,
+        "lato1": 40,
+        "lato2": 50,
+        "lato3": 30,
+        "area": 600.0,
+        "perimetro": 120
+    },
+    "8": {
+        "figura": "trapezio"
+    }
+}

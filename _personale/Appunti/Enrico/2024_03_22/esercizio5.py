@@ -7,9 +7,9 @@
 from esercizio3 import quadrato, rettangolo, triangolo
 
 
+# from flask import jsonify
 
-
-
+import json 
 
 nomeFile = 'C:\\Users\\lucas\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\Appunti\\Enrico\\2024_03_22\\a.txt'
 
@@ -39,7 +39,10 @@ for c in compiti:
         #print(f'di lato {lato}.')
         p,a = quadrato(lato)
         #print(f'risultato: Area = {a} e perimetro = {p}')
-        dizio[chiave] = {'figura': figura, 'lato': lato, 'area': a, 'perimetro': p}
+        dizio[chiave] = {'figura':figura,
+                         'lato':lato,
+                         'area':a,
+                         'perimetro':p}
 
     elif figura == 'rettangolo':
         #print('\ncalcolo un rettangolo')
@@ -48,7 +51,11 @@ for c in compiti:
         #print(f' che ha base = {base} e altezza = {altezza}')
         p,a = rettangolo(base,altezza)
         #print(f'risultato: Area = {a} e perimetro = {p}')
-        dizio[chiave] = {'figura': figura, 'base': base, 'altezza': altezza, 'area': a, 'perimetro': p}
+        dizio[chiave] = {'figura': figura,
+                         'base': base,
+                         'altezza': altezza,
+                         'area': a,
+                         'perimetro': p}
 
 
     elif figura == 'triangolo':
@@ -67,7 +74,9 @@ for c in compiti:
         #print(f'che ha base = {base}, altezza = {altezza} e lati{l1}, {l2}, {l3}')
         p,a = triangolo(base,altezza,l1,l2,l3)
         #print(f'risultato: Area = {a} e perimetro = {p}')
-        dizio[chiave] = {'figura': figura, 'base': base, 'altezza': altezza,
+        dizio[chiave] = {'figura': figura,
+                         'base': base,
+                         'altezza': altezza,
                          'lato1': l1,
                          'lato2': l2,
                          'lato3': l3, 
@@ -89,4 +98,17 @@ for c in compiti:
     else:
         dizio[chiave] = {'figura': figura}
 
+
 print(dizio)
+
+djstr = json.dumps(dizio)   # Jsonifizziamo il dizionario, la differenza tra dizionario e json sono virgolette
+                            # e che le chiavi sono tutte stringhe ("1" e non 1)
+print(djstr)
+
+# adesso che ho il formato json stringa,
+# voglio scriverlo in un file.
+
+file = "C:\\Users\\lucas\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\Appunti\\Enrico\\2024_03_22\\a.json"
+
+with open(file, 'w') as fw:
+    fw.write(djstr)
