@@ -5,9 +5,9 @@
 
 
 from esercizio3 import quadrato, rettangolo, triangolo
-nomeFile = 'a.txt'
+nomefile = 'a.txt'
 
-with open(nomeFile, 'r' , encoding = 'utf-8') as fr:
+with open(nomefile, 'r' , encoding = 'utf-8') as fr:
     dati = fr.read()
 
 compiti = fr.split('\n')
