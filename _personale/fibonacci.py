@@ -1,10 +1,10 @@
-#serie dei fibonacci:
+# serie dei fibonacci:
 
-#prende la somma dei numeri precedenti
+# prende la somma dei numeri precedenti
 
-#esempio
+# esempio
 
-#0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ecc.
+# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ecc.
 
 def fibo(lunghezza):
 
@@ -17,7 +17,7 @@ def fibo(lunghezza):
     for x in range(lunghezza):
 
         fibonacci = pri + sec
-        #print(x+1, fibonacci)
+        # print(x+1, fibonacci)
         listaFibo.append(fibonacci)
         pri = sec
         sec = fibonacci 
@@ -26,7 +26,7 @@ def fibo(lunghezza):
 
 
 #--------------------------------------------------------------------
-#lun = input('inserire lunghezza desiderata:')        
-#lun = int(lun)
-#risultato = fibo(lun)        
-#print(risultato)
+# lun = input('inserire lunghezza desiderata:')        
+# lun = int(lun)
+# risultato = fibo(lun)        
+# print(risultato)
