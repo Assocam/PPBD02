@@ -12,7 +12,7 @@
 
 # Il formato JSON serve per essere utilizzato all'interno di "inter process communication", per far parlare più processi.
 # Formati moderni: JSON (Java Script Object Notation), XML
-# Esempio: Smartphone (front end) - Cloud (Back End) ----------------- (vedi quaderno in data in oggetto)
+# Esempio: Smartphone (Front End) - Cloud (Back End) ----------------- (vedi quaderno in data in oggetto)
 
 
 # https -> Hyper Text Transfer Protocol Secure                         (come faccio a trasferire l'html)
