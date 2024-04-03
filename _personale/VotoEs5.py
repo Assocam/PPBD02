@@ -1,19 +1,19 @@
 def request_voto():
     while True:
-        voto_alpha = input ("inserire un voto:")
+        voto_alpha = input ("inserire un voto: ")
         if len (voto_alpha) < 3:
-            if voto_alpha[1] in ['-', '+']:
+            if len(voto_alpha) == 1  or voto_alpha[1] in ['-', '+']:
                 voto_alpha = voto_alpha.lower()
-                if len(voto_alpha) == 1 or voto_alpha[0] in ['a', 'b', 'c', 'd', 'f']:
+                if voto_alpha[0] in ['a', 'b', 'c', 'd', 'f']:
                     return voto_alpha
                 else:
-                    print (f'Il carattere "{voto_alpha[0]}" non è un voto')
+                    print (f'Il carattere "{voto_alpha[0]}" non è un voto!')
                     continue
             else:
-                print (f"secondo valore non corretto: {voto_alpha}")
+                print (f"secondo valore non corretto: {voto_alpha}!")
                 continue
         else:
-            print (f"valore troppo lungo: {voto_alpha}")
+            print (f"valore troppo lungo: {voto_alpha}!")
             continue
 #--
 def put_Value(x):
@@ -49,7 +49,8 @@ def second_value(x, y):
 # Main()
 voto_string = request_voto()
 voto_digit = put_Value(voto_string)
-voto_digit = second_value(voto_string[1], float (voto_digit)) 
+if len (voto_string) > 1:
+    voto_digit = second_value(voto_string[1], voto_digit) 
 
 print (f'il voto {voto_string.upper()} è equivalente a {voto_digit}')
 
