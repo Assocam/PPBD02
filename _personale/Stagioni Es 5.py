@@ -1,7 +1,7 @@
 # Stagioni Es 5
 def mese_input():
     while True:
-        q = input ("inserire il mese in numero: ")
+        q = input("inserire il mese in numero: ")
         if q.isdigit():
             q = int(q)
             if q in range (1, 13): # q <= 12 and q != 0; by using range i can check at once.
@@ -10,7 +10,7 @@ def mese_input():
                 print ("Il numero inserito non è un mese!", q)
                 continue
         else: 
-            print ("Il numero inserito non è un mese!", q)
+            print("Il numero inserito non è un mese!", q)
             continue
 def giorno_input(x):
     while True:
@@ -21,19 +21,19 @@ def giorno_input(x):
                 if q <=31 and q != 0: 
                     return q 
                 else: 
-                    print (f'Il giorno {q} non corrisponde con il mese {x}!')
+                    print(f'Il giorno {q} non corrisponde con il mese {x}!')
                     continue
             if x in (4, 6, 9, 11):
                 if q <=30 and q != 0: 
                     return q
                 else:
-                    print (f'Il giorno {q} non corrisponde con il mese {x}!')
+                    print(f'Il giorno {q} non corrisponde con il mese {x}!')
                     continue
             if x == 2:
                 if q <=29 and q != 0: 
                     return q
                 else:
-                    print (f'Il giorno {q} non corrisponde con il mese {x}!')                
+                    print(f'Il giorno {q} non corrisponde con il mese {x}!')                
                     continue
 #- Main()
 mese = mese_input()
@@ -62,5 +62,5 @@ if not (mese % 3) and giorno >= 21: # 'not (mese % 3)' is the same as 'mese % 3 
 
 
 
-print (f'Il giorno è {giorno} del mese {mese}, '
-       f'La stagione è: {stagione}')
+print(f'Il giorno è {giorno} del mese {mese}, '
+      f'La stagione è: {stagione}')
