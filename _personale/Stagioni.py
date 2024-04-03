@@ -21,7 +21,7 @@ while True:                         # Fintantoché inserisco un numero valido fa
     else:
         if risp_mese is False:
             messaggio_input_mese = messaggio2_mese
-            risp_mese = True
+            risp_mese = True                         # Cambio la condizione in modo da mostrare l'altra alternativa, nel ciclo else vado al secondo else al secondo giro
         else:
             messaggio_input_mese = messaggio3_mese
 
