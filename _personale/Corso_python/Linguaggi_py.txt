@@ -7,7 +7,7 @@ casa attico avrà metri quadri
 che può essere istanziata esempio: classe attico gestita con una 
 classe casa, possibilità di trattare una classe come in ogni stanza ereditata in passato
 (Casa)<----->(Attico) situazione dove attico può essere usata come casa
--Py non lo usa (terzo pilastro) "Incapsulamento" serve per decidere che alcune caratteristiche di qualche classe, non sono pubbliche 
+-Py non lo usa poco (terzo pilastro) "Incapsulamento" serve per decidere che alcune caratteristiche di qualche classe, non sono pubbliche 
 ma generalizzate (Casa)<----->(Attico) hanno i millesimi di appartenenza ad
 un condominio sta dentro la classe, Python lo ricorda che avere millesimi è pubblica con _millesimi_ è debolmente incapsulata 
 con __millesimi__ è fortemente capsulata
