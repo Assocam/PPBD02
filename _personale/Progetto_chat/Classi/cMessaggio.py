@@ -20,12 +20,27 @@ class Messaggio:
 
         self.Status = status                                   # Devo poter modificare lo stato del messaggio
 
+    def __repr__(self):   # metodo repr, mi serve per rappresentare l'oggetto, init è il costruttore, REPR È IL RAPPRESENTANTE
+
+        msg = f'Da: {self.Mittente}, A: {self.Destinatario}'
+        msg += f' Ti ha scritto: {self.Testo} \n'
+
+        return msg
+
     def Invia(self):
 
         self.DTInvio = datetime.datetime.now()
         self.Status = 'INVIATO'
 
-        # Tutta la procedura per mandare al mio backend i dati
+        # Tutta la procedura per mandare al mio backend i dati:
+        # Compilare il formato JSON adatto
+        # Vedi in documentazione, 
+        # Chiamare la API apposita con request
+        # inserendo i dati dove devono essere
+        # e valutare il codice di ritorno
+
+        # poi devo aggiornare la chat?
+        
 
     def Leggi(self, idMsg):
         

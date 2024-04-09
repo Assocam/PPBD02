@@ -1,0 +1,47 @@
+{
+    "1": {
+        "Mittente": 2,
+        "Destinatario": 3,
+        "Testo": "Ti ho inviato un msg",
+        "DTMessaggio": "2024-04-09T16:21:38.361856",
+        "DTInvio": "2024-04-09T16:21:38.361856",
+        "Status": "BOZZA",
+        "Chiave": "<function uuid4 at 0x000001D5A24132E0>"
+    },
+    "2": {
+        "Mittente": 2,
+        "Destinatario": 3,
+        "Testo": "Ti ho risposto al msg",
+        "DTMessaggio": "2024-04-09T16:21:38.361856",
+        "DTInvio": "2024-04-09T16:21:38.361856",
+        "Status": "BOZZA",
+        "Chiave": "<function uuid4 at 0x000001D5A24132E0>"
+    },
+    "3": {
+        "Mittente": 2,
+        "Destinatario": 3,
+        "Testo": "Nuovo messaggio",
+        "DTMessaggio": "2024-04-09T16:21:38.361856",
+        "DTInvio": "2024-04-09T16:21:38.361856",
+        "Status": "BOZZA",
+        "Chiave": "<function uuid4 at 0x000001D5A24132E0>"
+    },
+    "4": {
+        "Mittente": 2,
+        "Destinatario": 3,
+        "Testo": "Casomai non l'avessi capito",
+        "DTMessaggio": "2024-04-09T16:21:38.361856",
+        "DTInvio": "2024-04-09T16:21:38.361856",
+        "Status": "BOZZA",
+        "Chiave": "<function uuid4 at 0x000001D5A24132E0>"
+    },
+    "5": {
+        "Mittente": 2,
+        "Destinatario": 3,
+        "Testo": "E te lo dico ancora una volta",
+        "DTMessaggio": "2024-04-09T16:21:38.361856",
+        "DTInvio": "2024-04-09T16:21:38.361856",
+        "Status": "BOZZA",
+        "Chiave": "<function uuid4 at 0x000001D5A24132E0>"
+    }
+}

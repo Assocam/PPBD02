@@ -1,3 +1,6 @@
+import sys
+sys.path.append("C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\Progetto_chat")
+
 from Classi.cMessaggio import Messaggio
 import json           # Per esportare il backup
 import uuid           # Per salvare i backup successivi e chiamarli in modo diverso per non sovrascrivere
@@ -51,6 +54,7 @@ class Chat:
         
         self.ChatList = []                   # Lo cancella e ritorna all'inizio del ciclo for
 
+
     def Aggiungi(self, m:Messaggio):         # Potevo scrivere (self, m), per ricordarmi che m è messaggio posso dire
 #                                              che il tipo di parametro (m) è "Messaggio", usando i due punti
 #                                              se scrivo "m." mi fa vedere le proprietà e i metodi associati alla classe, 
@@ -62,16 +66,19 @@ class Chat:
         # di inserire il messaggio
         # poi aggiorno la lista di messaggi della chat
 
-        self.ChatList.insert(m)              # Aggiungo il messaggio alla lista di messaggi 
+        self.ChatList.append(m)              # Aggiungo il messaggio alla lista di messaggi 
 
     
-    def Importa(self, nomeFile):
+    def Importa(self, nomeFile):             # Praticamente è esporta al contrario
         
         # Apriamo e leggiamo i file
         with open(nomeFile, 'r', encoding = 'utf-8') as fr:
             datiJSON = fr.read()
 
         dizDati = json.loads(datiJSON)
+
+
+        self.Svuota()
 
         self.ChatList = []    # Intanto la lista è vuota
 
@@ -83,12 +90,18 @@ class Chat:
 
             msg = Messaggio('', '', '')
             msg.Chiave = dizMessaggio['Chiave']
+            msg.Mittente = dizMessaggio['Mittente']
             msg.Destinatario = dizMessaggio['Destinatario']
-            #msg.DTInvio = 
-            # SONO ARRIVATO QUI <---------------------------------------------------------------------------------------------
+            msg.Testo = dizMessaggio['Testo']
+            msg.DTMessaggio = dizMessaggio['DTMessaggio']
+            msg.DTInvio = dizMessaggio['DTInvio']
+            msg.Status = dizMessaggio['Status']
+
+            m = Messaggio
+            self.Aggiungi(m)
 
 
-    def Esporta(self, msgList):
+    def Esporta(self):
 
         # Esportiamo in formato JSON.
         # Mi serve un dizionario, anzi
@@ -97,7 +110,7 @@ class Chat:
         contaMessaggi = 0                     # Lo usiamo come chiave
         dizExport = {}
 
-        for m in msgList:
+        for m in self.ChatList:
             contaMessaggi += 1
 
             dizExport[contaMessaggi] = {}
@@ -105,8 +118,8 @@ class Chat:
             dizExport[contaMessaggi]['Mittente'] = m.Mittente              # dizExport[indice][chiave] = associa
             dizExport[contaMessaggi]['Destinatario'] = m.Destinatario
             dizExport[contaMessaggi]['Testo'] = m.Testo
-            dizExport[contaMessaggi]['DTMessaggio'] = m.DTMessaggio
-            dizExport[contaMessaggi]['DTInvio'] = m.DTInvio
+            dizExport[contaMessaggi]['DTMessaggio'] = m.DTMessaggio.isoformat()
+            dizExport[contaMessaggi]['DTInvio'] = m.DTInvio.isoformat()
             dizExport[contaMessaggi]['Status'] = m.Status
             dizExport[contaMessaggi]['Chiave'] = m.Chiave
             
@@ -115,14 +128,17 @@ class Chat:
 
         dizJSON = json.dumps(dizExport)    # JSONIZZIAMO IL FILE
         nomeChiave = str(uuid.uuid4())
-        DTBackup = str(datetime.date.isoformat())
+        DTBackup = str(datetime.datetime.now().isoformat())
 
         nomeFile = f'Backup Chat_{nomeChiave}_{DTBackup}.chat'
-        nomeCompleto = os.path.abspath(nomeFile)
+        #nomeCompleto = os.path.abspath(nomeFile)
         
+        nomeFile = nomeFile[:57]
+        # Specifico dove voglio metterlo
+        nomeFile = os.path.join("C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\Progetto_chat\\BackUps", nomeFile)
+
         # Adesso lo devo scrivere
-        with open(nomeCompleto, 'w') as fw:
+        with open(nomeFile, 'w') as fw:
             fw.write(dizJSON)
 
         
-
