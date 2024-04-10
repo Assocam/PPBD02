@@ -28,22 +28,22 @@
 #    403 - Proibito 
 #    405 - Metodo sbagliato (tipo se non uso Get)
 #    500 - Errore del server  <---- Importante
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+
+
+# <------------------------------------------------------ 10/04/2024 ------------------------------------------------------>
+
+# Quale database usare?
+
+# Ogni database è diverso, alcuni fanno cose che altri non riescono a fare, tipo usare il modulo datetime.
+# Useremo SQL lite, fare attenzione alla differenza di "dialetti" tra i vari database che si possono usare.
+# C'è quindi un repository di dati a cui accede il back end e che il front end non conosce.
+# Dobbiamo costruirlo.
+
+# Linguaggio SQL -> DDL (data definition language), DML (data manipulation language):
+
+# DML, 4 verbi -> Select, Insert, Update, Delete
+# DDL, 4 verbi -> Create (crea), Alter (altera), Drop (cancella), posso farlo su una tabella, sui dati, ecc...
+
 # 
 # 
 # 

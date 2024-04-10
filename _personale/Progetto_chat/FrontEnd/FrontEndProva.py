@@ -22,7 +22,18 @@ chat.Aggiungi(msg)
 msg = Messaggio(2, 3, 'E te lo dico ancora una volta')
 chat.Aggiungi(msg)
 
+msg.Invia() # Lo invia al Back-End!!!!!
+
 chat.Esporta()
 
 print(chat.ChatList)
 
+
+# Ora provo il DB
+
+# msg.Test()  # Costruisce il DB
+
+# for x in range(5):
+#     msg.TestInsertUser('enr', 'ter', 'Enrico', f'Terzolo {x}')
+
+# msg.TestSelectUtenti()
