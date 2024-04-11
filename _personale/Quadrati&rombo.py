@@ -7,29 +7,32 @@ def ask_input():
             print(f'Il valore inserito non è una cifra numerica! {question}')
 #- Main()
 
-input = int(ask_input())
+input_user = int(ask_input())
 counter = 0
 counter2 = 0
 
 
-while counter < input: # quadrato
-    print('*' * input)
+while counter < input_user: # quadrato
+    print('*' * input_user)
     counter += 1
 counter = 0
 
-while counter < (input-1): # 0++ < input
+while counter < (input_user-1): # 0++ < input
     if not(counter2 % 2): 
         counter2 += 1
-    print(' ' * ((input - counter) - 1) + '*' * counter2)
+    print('-' * ((input_user - counter) - 1) + '*' * counter2 + '-' * ((input_user - counter) - 1))
     counter += 1
     counter2 += 1 
 
 counter = 0
 counter2 += 1
 
-while counter < input:
+while counter < input_user:
     if not(counter2 % 2):
         counter2 -= 1
-    print(' ' * (counter) + '*' * counter2)
+    print('-' * (counter) + '*' * counter2 + '-' * (counter))
     counter += 1
     counter2 -= 1
+
+for _ in range(input_user):
+    print('*' * input_user)
