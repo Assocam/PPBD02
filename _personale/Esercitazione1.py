@@ -9,7 +9,7 @@ materie = ['Matematica:', 'Italiano:', 'Inglese:', 'Storia']
 
 # Per Matematica
 voto1 = float(input('Inserisci un numero intero o con decimali: '))
-voto2 = float(input('Inserisci il secondo numero intero o con decimali: '))
+voto2 = int(input('Inserisci il secondo numero intero o con decimali: '))
 
 voto_media = voto1 , voto2
 
