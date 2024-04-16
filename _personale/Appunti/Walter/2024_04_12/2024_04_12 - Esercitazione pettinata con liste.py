@@ -67,6 +67,8 @@ voti = []
 
 # Definizione della funzione chiedi numero
 
+voto_massimo = input('Inserire il voto massimo della base di valutazione adottata (esempio: 10, 30, 100): ')
+
 # prossima volta meglio chiedi_voto(num_voto, materia)
 def chiedi_voto(m, mat):  # vanno messi due argomenti, quelli che metto nella f string dell'input 
     
@@ -76,14 +78,14 @@ def chiedi_voto(m, mat):  # vanno messi due argomenti, quelli che metto nella f 
         
         try:
             voto = int(voto)
-            if 0 <= voto <= 100:
+            if 0 <= voto <= int(voto_massimo):
                 pass
-            elif voto < 0 or voto > 100:
-                print(f'Il voto inserito non è valido: "{voto}". Il voto deve essere compreso tra 0 e 100')
+            elif voto < 0 or voto > int(voto_massimo):
+                print(f'Il voto inserito non è valido: "{voto}". Il voto deve essere compreso tra 0 e {voto_massimo}')
                 continue
         
         except Exception:
-            print(f'Input non valido: "{voto}". Inserire un numero compreso tra 0 e 100')
+            print(f'Input non valido: "{voto}". Inserire un numero compreso tra 0 e {voto_massimo}')
             continue
 
         return voto
@@ -105,7 +107,7 @@ while True:
         print(f'Input non valido: "{quanti_voti}". Inserire un valore numerico intero.')
 
 
-print(f'Pagelle: inserire {quanti_voti} voti per materia in CENTESIMI - Voto tra 1 e 100.')
+print(f'Pagelle: inserire {quanti_voti} voti per materia in {voto_massimo[0:(len(voto_massimo))]}-ESIMI - Voto tra 1 e {voto_massimo}.')
 
 controllo = True
 
@@ -172,7 +174,7 @@ print()
 print(f'La media dellə studentə {nome} {cognome} della classe {classe} in ogni materia è:\n')
 
 for k in range (0,len(materie)):
-    print(f'{materie[k]}: {sum(voti[k])/len(voti[k]):.2f}')
+    print(f'{materie[k]}: {sum(voti[k])/len(voti[k]):.2f}/{voto_massimo}')
 
 
 # Concateniamo la lista dei voti:
@@ -187,6 +189,6 @@ print()
 
 print(f'La media globale dellə studentə {nome} {cognome} è: {round(media_globale)}\n')
 
-print(f'Il voto più alto registrato è {max(lista_globale)}\n'
-      f'Il voto più basso registrato è {min(lista_globale)}.')
+print(f'Il voto più alto registrato è {max(lista_globale)}/{voto_massimo}\n'
+      f'Il voto più basso registrato è {min(lista_globale)}/{voto_massimo}.')
 
