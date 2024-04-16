@@ -1,32 +1,49 @@
 # Esercitazione INF_PR_PY_E04
 # Denominazione: Programma Pagella con le liste
 
+def input_non_vuoto(dato):
+    while True:
+        valore = input(f'Inserire il {dato} dellə studentə: ')
+        if valore:
+            return valore.capitalize()
+        else:
+            print(f'Il campo {dato} non può essere vuoto.')
+
+
 # Definizione studente:
-nome = input('Inserire il nome dellə studentə: ')
-nome = nome.capitalize()
-cognome = input('Inserire il cognome dellə studentə: ')
-cognome = cognome.capitalize()
-classe = input('Inserire la classe frequentata dallə studentə: ')
-classe = classe.upper()
+nome = input_non_vuoto('nome')
+cognome = input_non_vuoto('cognome')
+
+while True:
+    classe = input('Inserire la classe frequentata dallə studentə: ')
+    if classe:
+        classe = classe.upper()
+        break
+    else:
+        print('Il campo classe non può essere vuoto.')
 
 # Creazione della lista materie
 
 materie = []
 
-# [DA TRASFORMARE IN FUNZIONE chiedi_materie()] <-------------------------------------------------------------
-while True:
-    numero_materia = len(materie) + 1
-    nome_materia = input(f'Inserire il nome della materia {numero_materia} (oppure premere invio per terminare): ')
-    if nome_materia:
-       nome_materia = nome_materia.capitalize()
-       materie.append(nome_materia)
-       continue
-    else:
-       break
+def chiedi_materie():
+   
+    while True:
+        numero_materia = len(materie) + 1
+        nome_materia = input(f'Inserire il nome della materia {numero_materia} (oppure premere invio per terminare): ')
+        if nome_materia:
+           nome_materia = nome_materia.capitalize()
+           materie.append(nome_materia)
+           continue
+        else:
+           break
+
+chiedi_materie()
 
 # Richiesta di conferma delle materie inserite
 
 while True:
+
     conferma = input(f'Le materie inserite sono: {materie}. Vuoi confermare? (Sì/No): ')
 
     if conferma == '':
@@ -38,18 +55,8 @@ while True:
     
     elif conferma[0].lower() == 'n':
         materie = []
-        
-        while True:
-            
-            # [DA TRASFORMARE IN FUNZIONE chiedi_materie()] <-------------------------------------------------------------
-            nome_materia = input('Inserire il nome della materia (oppure premere invio per terminare): ')
-            if nome_materia:
-               nome_materia = nome_materia.capitalize()
-               materie.append(nome_materia)
-               continue
-            else:
-               break
-    
+        chiedi_materie() 
+   
     else:
        print('Input non valido, rispondere sì o no.')
        continue
