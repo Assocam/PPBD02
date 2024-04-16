@@ -2,11 +2,11 @@
 # Denominazione: Programma Pagella con le liste
 
 # Definizione studente:
-nome = input('Inserire il nome dello studente: ')
+nome = input('Inserire il nome dellə studentə: ')
 nome = nome.capitalize()
-cognome = input('Inserire il cognome dello studente: ')
+cognome = input('Inserire il cognome dellə studentə: ')
 cognome = cognome.capitalize()
-classe = input('Inserire la classe frequentata dallo studente: ')
+classe = input('Inserire la classe frequentata dallə studentə: ')
 classe = classe.upper()
 
 # Creazione della lista materie
@@ -86,12 +86,23 @@ def chiedi_voto(m, mat):  # vanno messi due argomenti, quelli che metto nella f 
 
 # Richiesta numero voti 
 
-quanti_voti = input('Indicare quanti voti vuoi inserire per materia: ')
-quanti_voti = int(quanti_voti)
+while True:
+
+    quanti_voti = input('Indicare quanti voti vuoi inserire per materia: ')
+
+    try:
+        quanti_voti = int(quanti_voti)
+        break
+
+    except Exception:
+        print(f'Input non valido: "{quanti_voti}". Inserire un valore numerico intero.')
+
 
 print(f'Pagelle: inserire {quanti_voti} voti per materia in CENTESIMI - Voto tra 1 e 100.')
 
 controllo = True
+
+# Inserimento dei voti
 
 for mat in materie:
     if controllo == True:
@@ -144,14 +155,14 @@ while True:
 
 # Stampa output richiesto
 
-print(f'Ecco la lista di voti inseriti per lo studente {nome} {cognome} della classe {classe}: \n')
+print(f'Ecco la lista di voti inseriti per lə studentə {nome} {cognome} della classe {classe}: \n')
 
 for k in range (0,len(materie)):
     print(f'{materie[k]}: {voti[k]}')
 
 print()
 
-print(f'La media dello studente {nome} {cognome} della classe {classe} in ogni materia è:\n')
+print(f'La media dellə studentə {nome} {cognome} della classe {classe} in ogni materia è:\n')
 
 for k in range (0,len(materie)):
     print(f'{materie[k]}: {sum(voti[k])/len(voti[k]):.2f}')
@@ -167,7 +178,8 @@ media_globale = sum(lista_globale)/len(lista_globale)
 
 print()
 
-print(f'La media globale dello studente {nome} {cognome} è: {round(media_globale)}\n')
+print(f'La media globale dellə studentə {nome} {cognome} è: {round(media_globale)}\n')
 
 print(f'Il voto più alto registrato è {max(lista_globale)}\n'
       f'Il voto più basso registrato è {min(lista_globale)}.')
+
