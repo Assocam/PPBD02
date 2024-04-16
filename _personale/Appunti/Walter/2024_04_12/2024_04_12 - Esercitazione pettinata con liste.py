@@ -167,3 +167,5 @@ print(f'La media globale dello studente {nome} {cognome} è: {round(media_global
 
 print(f'Il voto più alto registrato è {max(lista_globale)}\n'
       f'Il voto più basso registrato è {min(lista_globale)}.')
+
+# Verifica se si può associare il voto massimo e minimo alla materia
