@@ -7,6 +7,7 @@ nome = nome.capitalize()
 cognome = input('Inserire il cognome dello studente: ')
 cognome = cognome.capitalize()
 classe = input('Inserire la classe frequentata dallo studente: ')
+classe = classe.upper()
 
 # Creazione della lista materie
 
@@ -26,7 +27,11 @@ while True:
 while True:
     conferma = input(f'Le materie inserite sono: {materie}. Vuoi confermare? (Sì/No): ')
 
-    if conferma[0].lower() == 's':
+    if conferma == '':
+       print('Il campo non può essere vuoto, digitare sì o no e premere invio.')
+       continue
+
+    elif conferma[0].lower() == 's':
         break
     
     elif conferma[0].lower() == 'n':
@@ -82,99 +87,83 @@ quanti_voti = int(quanti_voti)
 
 print(f'Pagelle: inserire {quanti_voti} voti per materia in CENTESIMI - Voto tra 1 e 100.')
 
-count = 0 
+controllo = True
 
 for mat in materie:
-    if count == 0:
+    if controllo == True:
         print(f'Inserisci i voti per {mat}.')
     else:
         print(f'Attenzione! Cambio materia: {mat}!')
     
-    count += 1
+    controllo = False
        
     voti_parziali = []
 
     for m in range (1,quanti_voti+1):
-    #    voto = input(f'Inserire il voto {m} di {mat}: ')
-    #    voto = int(voto)
        voto = chiedi_voto(m, mat)
        voti_parziali.append(voto)
 
     voti.append(voti_parziali)
 
+print()
 
 # Richiesta conferma voti inseriti:
 
-# while True:
+while True:
+    print('I voti inseriti sono:\n')
+    for idx, materia in enumerate(materie):
+        print(f'{materia}: {voti[idx]}')
 
-#     for idx,materia in materie.enumerate():   # da un identificativo
-#         print(f'I voti inseriti sono: \n'
-#             f'{materia}: {voti[idx]}\n')
+    conferma = input('\nVuoi confermare? Rispondere sì o no): ')
 
-    
-#     conferma = input('Vuoi confermare? (Sì/No): ')
+    if conferma == '':
+        print('Il campo non può essere vuoto, rispondere sì o no.\n')
+        continue
 
-#     if conferma[0].lower() == 's':
-#         break
-    
-#     elif conferma[0].lower() == 'n':
-#         voti = []
-#         voti_parziali = []
+    elif conferma.lower() == 's':
+        break
 
-#         count = 0 
+    elif conferma.lower() == 'n':
+        voti = []
+        for mat in materie:
+            voti_parziali = []
+            for m in range(1, quanti_voti + 1):
+                voto = chiedi_voto(m, mat)
+                voti_parziali.append(voto)
+            voti.append(voti_parziali)
+        continue
 
-#         for mat in materie:
-#             if count == 0:
-#                 print(f'Inserisci i voti per {mat}.')
-#             else:
-#                 print(f'Attenzione! Cambio materia: {mat}!')
-            
-#             count += 1
-                
-#             voti_parziali = []
-
-#             for m in range (1,quanti_voti+1):
-#                 #    voto = input(f'Inserire il voto {m} di {mat}: ')
-#                 #    voto = int(voto)
-#                 voto = chiedi_voto(m, mat)
-#                 voti_parziali.append(voto)
-            
-#             voti.append(voti_parziali) 
-
-#     else:
-#        print('Input non valido, rispondere sì o no.')
-#        continue
+    else:
+        print(f'Input non valido: {conferma}, rispondere sì o no.\n')
+        continue
 
 
 # Stampa output richiesto
 
-print(f'Ecco la lista di voti inseriti per lo studente {nome} {cognome} della classe {classe}: \n'
-      f'{materie[0]}: {voti[0]}\n'
-      f'{materie[1]}: {voti[1]}\n'
-      f'{materie[2]}: {voti[2]}\n'                    # <----- SONO ARRIVATO QUI
-      f'{materie[3]}: {voti[3]}')                     # <----- CAPIRE COME MODIFICARE QUESTA COSA IN BASE AL NUMERO DI MATERIE
+print(f'Ecco la lista di voti inseriti per lo studente {nome} {cognome} della classe {classe}: \n')
 
+for k in range (0,len(materie)):
+    print(f'{materie[k]}: {voti[k]}')      # <----- CAPIRE COME MODIFICARE QUESTA COSA IN BASE AL NUMERO DI MATERIE
 
-media_matematica = sum(voti[0])/len(voti[0])
-media_italiano = sum(voti[1])/len(voti[1])
-media_inglese = sum(voti[2])/len(voti[2])
-media_storia = sum(voti[3])/len(voti[3])
+print()
 
-print(f'La media dello studente {nome} {cognome} della classe {classe} in ogni materia è:\n'
-      f'Matematica: {media_matematica:.2f}\n'
-      f'Italiano: {media_italiano:.2f}\n'
-      f'Inglese: {media_inglese:.2f}\n'
-      f'Storia: {media_storia:.2f}')
+print(f'La media dello studente {nome} {cognome} della classe {classe} in ogni materia è:\n')
 
-media_globale = (media_matematica + media_italiano + media_inglese + media_storia)/len(materie)
+for k in range (0,len(materie)):
+    print(f'{materie[k]}: {sum(voti[k])/len(voti[k]):.2f}')
 
-print(f'La media globale dello studente {nome} {cognome} è: {round(media_globale)}')
 
 # Concateniamo la lista dei voti:
 lista_globale = []
 
 for sottolista in voti:
     lista_globale += sottolista
+
+media_globale = sum(lista_globale)/len(lista_globale)
+
+print()
+
+print(f'La media globale dello studente {nome} {cognome} è: {round(media_globale)}\n')
 
 print(f'Il voto più alto registrato è {max(lista_globale)}\n'
       f'Il voto più basso registrato è {min(lista_globale)}.')
