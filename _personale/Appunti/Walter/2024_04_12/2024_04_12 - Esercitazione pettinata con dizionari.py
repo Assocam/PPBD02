@@ -13,8 +13,10 @@ classe = classe.upper()
 
 materie = []
 
+# [DA TRASFORMARE IN FUNZIONE chiedi_materie()] <-------------------------------------------------------------
 while True:
-    nome_materia = input('Inserire il nome della materia (oppure premere invio per terminare): ')
+    numero_materia = len(materie) + 1
+    nome_materia = input(f'Inserire il nome della materia {numero_materia} (oppure premere invio per terminare): ')
     if nome_materia:
        nome_materia = nome_materia.capitalize()
        materie.append(nome_materia)
@@ -38,7 +40,8 @@ while True:
         materie = []
         
         while True:
-         
+            
+            # [DA TRASFORMARE IN FUNZIONE chiedi_materie()] <-------------------------------------------------------------
             nome_materia = input('Inserire il nome della materia (oppure premere invio per terminare): ')
             if nome_materia:
                nome_materia = nome_materia.capitalize()
@@ -57,7 +60,8 @@ voti = []
 
 # Definizione della funzione chiedi numero
 
-def chiedi_voto(m, mat):  # vanno messi due argomenti, quelli che metto nella f string dell'input
+# prossima volta meglio chiedi_voto(num_voto, materia)
+def chiedi_voto(m, mat):  # vanno messi due argomenti, quelli che metto nella f string dell'input 
     
     while True:
 
@@ -143,7 +147,7 @@ while True:
 print(f'Ecco la lista di voti inseriti per lo studente {nome} {cognome} della classe {classe}: \n')
 
 for k in range (0,len(materie)):
-    print(f'{materie[k]}: {voti[k]}')      # <----- CAPIRE COME MODIFICARE QUESTA COSA IN BASE AL NUMERO DI MATERIE
+    print(f'{materie[k]}: {voti[k]}')
 
 print()
 
