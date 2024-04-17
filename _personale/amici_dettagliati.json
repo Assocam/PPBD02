@@ -1,0 +1,58 @@
+{
+    "35": [
+        {
+            "Nome": "Liuk",
+            "Anno di nascita": 1989
+        }
+    ],
+    "25": [
+        {
+            "Nome": "Ada",
+            "Anno di nascita": 1999
+        },
+        {
+            "Nome": "Geronima",
+            "Anno di nascita": 1999
+        },
+        {
+            "Nome": "Roberto",
+            "Anno di nascita": 1999
+        }
+    ],
+    "44": [
+        {
+            "Nome": "Ciccio",
+            "Anno di nascita": 1980
+        },
+        {
+            "Nome": "Pippo",
+            "Anno di nascita": 1980
+        }
+    ],
+    "48": [
+        {
+            "Nome": "Felice",
+            "Anno di nascita": 1976
+        },
+        {
+            "Nome": "Mimmo",
+            "Anno di nascita": 1976
+        }
+    ],
+    "52": [
+        {
+            "Nome": "Luca",
+            "Anno di nascita": 1972
+        },
+        {
+            "Nome": "Pluto",
+            "Anno di nascita": 1972
+        }
+    ],
+    "101": [
+        {
+            "Nome": "Tot\u00f2",
+            "Anno di nascita": 1923
+        }
+    ]
+}
