@@ -1,11 +1,11 @@
-Nome, Età
-Ada,25
-Pippo,44
-Felice,48
-Geronima,25
-Ciccio,44
-Luca,52
-Roberto,25
-Pluto,52
-Mimmo,48
-Totò,101
+Nome, Età, Anno di nascita
+Ada, 25, Nato/a il 1999
+Pippo, 44, Nato/a il 1980
+Felice, 48, Nato/a il 1976
+Geronima, 25, Nato/a il 1999
+Ciccio, 44, Nato/a il 1980
+Luca, 52, Nato/a il 1972
+Roberto, 25, Nato/a il 1999
+Pluto, 52, Nato/a il 1972
+Mimmo, 48, Nato/a il 1976
+Totò, 101, Nato/a il 1923
