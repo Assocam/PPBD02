@@ -1,6 +1,6 @@
 # PROGRAMMA PAGELLA CON LISTE PPBD02-14
 def calcola_media(voti):
-    return round(sum(voti) / len(voti), 2)
+    return round(sum(voti) / len(voti), 2)                              # Numeratore delle decine
 
 def main():
     num_studenti = int(input("Inserisci il numero di studenti: "))      # Metti il numero degli studenti
