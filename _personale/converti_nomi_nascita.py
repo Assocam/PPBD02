@@ -15,6 +15,8 @@ def converti_file(input_file, output_file):
 
     try:
 
+        #input_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\'
+
         with open(input_file, mode = 'r', encoding = 'utf-8') as file_input:
             righe = file_input.readlines()
 
@@ -26,18 +28,20 @@ def converti_file(input_file, output_file):
 
         for riga in righe:
 
-            nome, anno_di_nascita = riga.split()
-            nome = nome.replace(':', ',')   
-            eta = calcolo_età(anno_di_nascita)          # uso la funzione di prima
-            riga_formattata = f"{nome},{eta}\n"         # formatto i dati per come voglio
+            nome, anno = riga.split()
+            nome = nome.replace(':', '')   
+            eta = calcolo_età(anno)                     # uso la funzione di prima
+            riga_formattata = f"{nome}{eta}\n"         # formatto i dati per come voglio
             report.append(riga_formattata)              # appendi la riga ottenuta all'intestazione,
 #                                                       # quindi in pratica scrivi sotto
 
-            with open(output_file, 'w') as file_output:
-                file_output.writelines(report)
+        # Percorso del nuovo file
+        #output_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi'    
 
-            print(f"Il file {output_file} è stato creato con successo.")
+        with open(output_file, 'w', encoding = 'utf-8') as file_output:
+            file_output.writelines(report)
 
+        print(f"Il file {output_file} è stato creato con successo.")
 
 
     # Se non riesco ad aprire il file stampo un messaggio di errore
@@ -45,3 +49,8 @@ def converti_file(input_file, output_file):
     except Exception:
         print("Errore: il file di origine non è stato trovato.")
 
+
+if __name__ == "__main__":
+    input_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\nomi_data_nascita.txt'
+    output_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\nomi_eta_generato.csv'
+    converti_file(input_file, output_file)
