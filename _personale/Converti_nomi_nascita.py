@@ -2,7 +2,9 @@
 import os
 import uuid
 import json
-from datetime import date                              
+import sys
+from datetime import date   
+
 
 anno_corrente = date.today().year                                         
 
