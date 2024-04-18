@@ -29,11 +29,13 @@ def converti_file(input_file, output_file):
 
         for riga in righe:
 
-            nome, anno = riga.split()
-            nome = nome.replace(':', '')   
-            eta = calcolo_età(anno)                     # uso la funzione di prima
-            riga_formattata = f"{nome},{eta}\n"         # formatto i dati per come voglio
-            report.append(riga_formattata)              # appendi la riga ottenuta all'intestazione,
+            if riga.strip():  # verifica se la stringa non è vuota 
+                
+                nome, anno = riga.split()
+                nome = nome.replace(':', '')   
+                eta = calcolo_età(anno)                     # uso la funzione di prima
+                riga_formattata = f"{nome},{eta}\n"         # formatto i dati per come voglio
+                report.append(riga_formattata)              # appendi la riga ottenuta all'intestazione,
 #                                                       # quindi in pratica scrivi sotto
 
         # Percorso del nuovo file
@@ -62,7 +64,7 @@ if __name__ == "__main__":
         print('Attenzione, la sintassi corretta è: "py converti_nomi_nascita.py file_sorgente.txt file_output.csv"')
     else:
         input_file = sys.argv[1]   # --> file_sorgente.txt
-        output_file = sys.argv[2]  # --> file_output.csv
-#       output_file = f'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\{sys.argv[2]}'  # --> file_output.csv
+#       output_file = sys.argv[2]  # --> file_output.csv
+        output_file = f'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\{sys.argv[2]}'  # --> file_output.csv
 
         converti_file(input_file, output_file)
