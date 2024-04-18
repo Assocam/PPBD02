@@ -29,6 +29,6 @@ with open(output_path, mode = 'w', encoding = 'utf-8') as output_file:
     output_file.write(intestazione)
     for eta in report:
         for nome in report[eta]:
-            riga = f'{nome},{eta}\n'   
+            riga = f'{nome},{eta}\n'
             output_file.write(riga)
 
