@@ -1,4 +1,5 @@
 from datetime import date
+import sys
 
 # Creazione funzione calcolo età
 
@@ -31,7 +32,7 @@ def converti_file(input_file, output_file):
             nome, anno = riga.split()
             nome = nome.replace(':', '')   
             eta = calcolo_età(anno)                     # uso la funzione di prima
-            riga_formattata = f"{nome}{eta}\n"         # formatto i dati per come voglio
+            riga_formattata = f"{nome},{eta}\n"         # formatto i dati per come voglio
             report.append(riga_formattata)              # appendi la riga ottenuta all'intestazione,
 #                                                       # quindi in pratica scrivi sotto
 
@@ -50,7 +51,18 @@ def converti_file(input_file, output_file):
         print("Errore: il file di origine non è stato trovato.")
 
 
+# if __name__ == "__main__":
+#     input_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\nomi_data_nascita.txt'
+#     output_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\nomi_eta_generato.csv'
+#     converti_file(input_file, output_file)
+
+
 if __name__ == "__main__":
-    input_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\nomi_data_nascita.txt'
-    output_file = 'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\nomi_eta_generato.csv'
-    converti_file(input_file, output_file)
+    if len(sys.argv) > 3:      # sys.argv contiene ['script.py', 'arg1', 'arg2', 'arg3']
+        print('Attenzione, la sintassi corretta è: "py converti_nomi_nascita.py file_sorgente.txt file_output.csv"')
+    else:
+        input_file = sys.argv[1]   # --> file_sorgente.txt
+        output_file = sys.argv[2]  # --> file_output.csv
+#       output_file = f'C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\files_esercizi\\{sys.argv[2]}'  # --> file_output.csv
+
+        converti_file(input_file, output_file)
