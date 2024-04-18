@@ -6,7 +6,7 @@ dict_eta = {}
 anno_corrente = date.today().year
 dict_sub = {}
 
-with open('C:\\Users\\Gigi3\\Desktop\\PythonP\\PPBD02\\files_esercizi\\nomi_data_nascita.txt', mode='r', encoding='utf-8') as  f:
+with open('./files_esercizi/nomi_data_nascita.txt', mode='r', encoding='utf-8') as  f:
     file = f.readlines()
     for line in file:
         line = line.strip().split(':')
@@ -20,7 +20,7 @@ for e in dati:
     else:
         dict_sub[eta] = e
 
-with open('C:\\Users\\Gigi3\\Desktop\\PythonP\\PPBD02\\_personale\\outputs\\nomi_eta.csv', mode='+w', encoding='utf-8') as f:
+with open('./_personale/outputs/nomi_eta.csv', mode='+w', encoding='utf-8') as f:
     file = f
     file.write('Nome, Età, Anno di nascita\n')
     for e in dict_eta:
