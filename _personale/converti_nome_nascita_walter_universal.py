@@ -21,6 +21,9 @@ def check_file(input_file, output_file):
 
 
 def converti_file(input_path, output_path):
+  
+    anno_corrente = date.today().year
+    report = {}  
 
     with open(input_path, mode='r', encoding = 'utf-8') as file_testo:
             list_lines = file_testo.readlines()
@@ -46,13 +49,12 @@ def converti_file(input_path, output_path):
                 output_file.write(riga)
 
 #   return None   è il default se non scrivo nulla
-    
+
+# Controlla se il file è stato eseguito come script o no    
 if __name__ == 'main':    # necessario per usare il codice in caso di importazione come script
 
     args = sys.argv
 
-    anno_corrente = date.today().year
-    report = {}  
 
     # Condizioni: len = 1, 2, 3, > 3
 
