@@ -46,35 +46,35 @@ def converti_file(input_path, output_path):
                 output_file.write(riga)
 
 #   return None   è il default se non scrivo nulla
-    return 
-
-
-args = sys.argv
-
-anno_corrente = date.today().year
-report = {}  
-
-# Condizioni: len = 1, 2, 3, > 3
-
-if len(args) == 3:
-    input_path = args[1]
-    output_path = args[2]
-
-    if check_file(input_path, output_path):
-        converti_file(input_path, output_path)
-        path_assoluto = os.path.abspath(output_path)
-        print(f'SUCCESSO! Il file è stato creato correttamente alla '
-              f'posizione {path_assoluto}')
-
-
     
-elif len(args) == 1:
-    print('Non hai passato i due parametri necessari: '
-          'File di input e file di output.')
-elif len(args) == 2:
-    print('Non hai passato il secondo parametro: '
-          'File di input o file di output.')    
-else:
-    print('Hai inserito troppi parametri. Ne servono solo due: '
-          'File di input e file di output.')
+if __name__ == 'main':    # necessario per usare il codice in caso di importazione come script
+
+    args = sys.argv
+
+    anno_corrente = date.today().year
+    report = {}  
+
+    # Condizioni: len = 1, 2, 3, > 3
+
+    if len(args) == 3:
+        input_path = args[1]
+        output_path = args[2]
+
+        if check_file(input_path, output_path):
+            converti_file(input_path, output_path)
+            path_assoluto = os.path.abspath(output_path)
+            print(f'SUCCESSO! Il file è stato creato correttamente alla '
+                f'posizione {path_assoluto}')
+
+
+        
+    elif len(args) == 1:
+        print('Non hai passato i due parametri necessari: '
+            'File di input e file di output.')
+    elif len(args) == 2:
+        print('Non hai passato il secondo parametro: '
+            'File di input o file di output.')    
+    else:
+        print('Hai inserito troppi parametri. Ne servono solo due: '
+            'File di input e file di output.')
 

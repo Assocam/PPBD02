@@ -60,7 +60,7 @@ def converti_file(input_file, output_file):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 3:      # sys.argv contiene ['script.py', 'arg1', 'arg2', 'arg3']
+    if len(sys.argv) != 3:      # sys.argv contiene ['script.py', 'arg1', 'arg2', 'arg3']
 #                              # quindi in questo caso ['converti_nomi_nascita.py', 'nomi_data_nascita', 'nomi_eta.csv']        
         print('Attenzione, la sintassi corretta è: "py converti_nomi_nascita.py file_sorgente.txt file_output.csv"')
     else:
