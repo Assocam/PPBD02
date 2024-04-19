@@ -71,43 +71,40 @@ def file_txt(output_path_txt, dict_sub):
 #-Main()
 
 if __name__ == '__main__': # to check if it was run as file or imported
-    ...
+    args = sys.argv # argomenti passati dal utente prima dell'esecuzione
 
+    if len(args) == 4:
+        input_path_dati = args [1]
+        output_path_csv = args[2]
+        output_path_txt = args[3]
 
-args = sys.argv # argomenti passati dal utente prima dell'esecuzione
+        # input_path = filePath = './files_esercizi/nomi_data_nascita.txt' 
+        # output_path1 = filePath = './_personale/outputs/nomi_eta.csv' 
+        # output_path2 = filePath = './_personale/outputs/eta_nomi.txt' 
 
-if len(args) == 4:
-    input_path_dati = args [1]
-    output_path_csv = args[2]
-    output_path_txt = args[3]
+        if check_files(input_path_dati, output_path_csv, output_path_txt):
+            dati = {} # dict = {nome, anno di nascita}
+            dati = open_file(input_path_dati)
+            dict_eta, dict_sub = conversion_data(dati)
+            file_csv(output_path_csv, dict_eta)
+            file_txt(output_path_txt, dict_sub)
+        else:
+            exit()
 
-    # input_path = filePath = './files_esercizi/nomi_data_nascita.txt' 
-    # output_path1 = filePath = './_personale/outputs/nomi_eta.csv' 
-    # output_path2 = filePath = './_personale/outputs/eta_nomi.txt' 
+    elif len(args) == 1:
+        print("Non hai passato i quattro parametri necessari." 
+              "1 file di input e tre file di output.")
 
-    if check_files(input_path_dati, output_path_csv, output_path_txt):
-        dati = {} # dict = {nome, anno di nascita}
-        dati = open_file(input_path_dati)
-        dict_eta, dict_sub = conversion_data(dati)
-        file_csv(output_path_csv, dict_eta)
-        file_txt(output_path_txt, dict_sub)
+    elif len(args) == 2:
+        print("Non hai passato il terzo e quarto parametro: File .csv + File .txt")
+
+    elif len(args) == 3:
+        print("Non hai passato il quarto parametro: File .txt")
+
+    elif len(args) > 4:
+        print("Hai passato troppi parametri")
+
     else:
+        print("Hai inserito un numerto di parametri non coretto." 
+              "Server indicare il file di input e il file di output.")
         exit()
-
-elif len(args) == 1:
-    print("Non hai passato i quattro parametri necessari." 
-          "1 file di input e tre file di output.")
-    
-elif len(args) == 2:
-    print("Non hai passato il terzo e quarto parametro: File .csv + File .txt")
-
-elif len(args) == 3:
-    print("Non hai passato il quarto parametro: File .txt")
-
-elif len(args) > 4:
-    print("Hai passato troppi parametri")
-
-else:
-    print("Hai inserito un numerto di parametri non coretto." 
-          "Server indicare il file di input e il file di output.")
-    exit()
