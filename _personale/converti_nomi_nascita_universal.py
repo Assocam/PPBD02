@@ -29,18 +29,19 @@ def check_files(input_file, output_file_csv, output_file_txt):
 def open_file(input_path): # Apertura dei file con i dati iniziali
     with open(input_path, mode='r', encoding='utf-8') as  f:
         file = f.readlines()
-        for line in file:
-            line = line.strip().split(':')
-            dati[line[0]] = (line[1])
-    return dati
+        dati_file = {}
+        for line in dati_file:
+            line = list(line.strip().split(':'))
+            dati_file[line[0]] = (line[1])
+    return dati_file
 #-
-def conversion_data(dati): # conversione dei dati e creazione dei dizzionari.
+def conversion_data(dati_file): # conversione dei dati e creazione dei dizzionari.
     anno_corrente = date.today().year
     dict_eta = {} # dict = {nome, eta}
     dict_sub = {} # dict = {eta, nomi di persone con quell'età}
 
-    for e in dati: 
-        eta = anno_corrente - int(dati[e])
+    for e in dati_file: 
+        eta = anno_corrente - int(dati_file[e])
         dict_eta[e] = eta 
         if eta in dict_sub: 
             dict_sub[eta] = f'{dict_sub[eta]}, {e}'
@@ -55,7 +56,7 @@ def file_csv(output_path_csv, dict_eta):
         output_file = []
         output_file.append('Nome, Età, Anno di nascita:\n')
         for e in sorted(dict_eta):
-            output_file.append(f'{e}, {dict_eta[e]}, Nato/a il{dati[e]}\n')
+            output_file.append(f'{e}, {dict_eta[e]}, Nato/a il{file[e]}\n')
         output_file.append('\n')
         file.writelines(output_file)
 #-
@@ -83,20 +84,21 @@ if __name__ == '__main__': # to check if it was run as file or imported
         # output_path2 = filePath = './_personale/outputs/eta_nomi.txt' 
 
         if check_files(input_path_dati, output_path_csv, output_path_txt):
-            dati = {} # dict = {nome, anno di nascita}
-            dati = open_file(input_path_dati)
-            dict_eta, dict_sub = conversion_data(dati)
+            dati_file = {} # dict = {nome, anno di nascita}
+            dati_file = open_file(input_path_dati)
+            dict_eta, dict_sub = conversion_data(dati_file)
             file_csv(output_path_csv, dict_eta)
             file_txt(output_path_txt, dict_sub)
         else:
             exit()
 
     elif len(args) == 1:
-        print("Non hai passato i quattro parametri necessari." 
+        print("Non hai passato i quattro parametri necessari: " 
               "1 file di input e tre file di output.")
 
     elif len(args) == 2:
-        print("Non hai passato il terzo e quarto parametro: File .csv + File .txt")
+        print("Non hai passato il terzo e quarto parametro:"
+              "File .csv + File .txt")
 
     elif len(args) == 3:
         print("Non hai passato il quarto parametro: File .txt")
@@ -105,6 +107,6 @@ if __name__ == '__main__': # to check if it was run as file or imported
         print("Hai passato troppi parametri")
 
     else:
-        print("Hai inserito un numerto di parametri non coretto." 
+        print("Hai inserito un numerto di parametri non coretto: " 
               "Server indicare il file di input e il file di output.")
         exit()
