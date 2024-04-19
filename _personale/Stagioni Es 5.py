@@ -4,7 +4,8 @@ def mese_input():
         q = input("inserire il mese in numero: ")
         if q.isdigit():
             q = int(q)
-            if q in range (1, 13): # q <= 12 and q != 0; by using range i can check at once.
+            if q in range (1, 13): 
+                # q <= 12 and q != 0; by using range i can check at once.
                 return q
             else:
                 print ("Il numero inserito non è un mese!", q)
@@ -50,7 +51,8 @@ elif mese in (7, 8, 9):
 else:
     stagione = 'Autunno'
 
-if not (mese % 3) and giorno >= 21: # 'not (mese % 3)' is the same as 'mese % 3 == 0'
+if not (mese % 3) and giorno >= 21: 
+    # 'not (mese % 3)' is the same as 'mese % 3 == 0'
     if stagione == 'Inverno': 
         stagione = 'Primavera'
     elif stagione == 'Primavera': 

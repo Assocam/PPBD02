@@ -13,8 +13,14 @@ def check_files(input_file, output_file_csv, output_file_txt):
     else:
         pass
 
-    if  not os.path.exists(dir_string_csv) or not os.path.exists(dir_string_txt):
-        print("La cartella del file output non esiste")
+    if  not os.path.exists(dir_string_csv):
+        print("La cartella del file '.csv' output non esiste")
+        return False
+    else:
+        pass
+
+    if  not os.path.exists(dir_string_txt):
+        print("La cartella del file '.txt' output non esiste")
         return False
     else:
         pass
@@ -29,6 +35,10 @@ def open_file(input_path): # Apertura dei file con i dati iniziali
     return dati
 #-
 def conversion_data(dati): # conversione dei dati e creazione dei dizzionari.
+    anno_corrente = date.today().year
+    dict_eta = {} # dict = {nome, eta}
+    dict_sub = {} # dict = {eta, nomi di persone con quell'età}
+
     for e in dati: 
         eta = anno_corrente - int(dati[e])
         dict_eta[e] = eta 
@@ -59,11 +69,11 @@ def file_txt(output_path_txt, dict_sub):
         file.write('\n')
 #-
 #-Main()
-anno_corrente = date.today().year
-dati = {} # dict = {nome, anno di nascita}
-dict_eta = {} # dict = {nome, eta}
-dict_sub = {} # dict = {eta, nomi di persone con quell'età}
-output_file = [] # lista di line da scrivere nei nuovi files
+
+if __name__ == '__main__': # to check if it was run as file or imported
+    ...
+
+
 args = sys.argv # argomenti passati dal utente prima dell'esecuzione
 
 if len(args) == 4:
@@ -76,6 +86,7 @@ if len(args) == 4:
     # output_path2 = filePath = './_personale/outputs/eta_nomi.txt' 
 
     if check_files(input_path_dati, output_path_csv, output_path_txt):
+        dati = {} # dict = {nome, anno di nascita}
         dati = open_file(input_path_dati)
         dict_eta, dict_sub = conversion_data(dati)
         file_csv(output_path_csv, dict_eta)
