@@ -39,32 +39,31 @@ def converti_file(input_path,output_path):
                 riga = f'{nome},{eta}\n'
                 outputs_file.write(riga)
 
-args = sys.argv
+if __name__ == '__main__':
 
-anno_corrente = date.today().year
-report = {}  #dizionario vuoto
-
-#len 1 , 2 , 3 , >3
-if len(args) == 3:    
-    input_path = args[1]
-    output_path = args[2]
+    args = sys.argv
     
-    if check_file(input_path,output_path):
-        converti_file(input_path, output_path)
-        path_assoluto = os.path.abspath('_personale\nomi_data_nascita.txt')
-        print('SUCCESO: Il file è stato creato corettamente alla '
-              f'posizione {path_assoluto}!'
-        )
-
-elif len(args) == 1:
-    print('non hai passato i 2 parametri neccesari '
-          'il file di input e il file di output')
-elif len(args) == 2:
-    print('non hai passato il secondo parametro '
-         'il file di output')
-else: 
-    print('hai inserito tropi parametri. Ne servono 2.'
-          'il file di input e il file di output')
+    anno_corrente = date.today().year
+    report = {}  #dizionario vuoto
     
+    #len 1 , 2 , 3 , >3
+    if len(args) == 3:    
+        input_path = args[1]
+        output_path = args[2]
+        
+        if check_file(input_path,output_path):
+            converti_file(input_path, output_path)
+            path_assoluto = os.path.abspath('_personale\nomi_data_nascita.txt')
+            print('SUCCESO: Il file è stato creato corettamente alla '
+                  f'posizione {path_assoluto}!'
+            )
     
-
+    elif len(args) == 1:
+        print('non hai passato i 2 parametri neccesari '
+              'il file di input e il file di output')
+    elif len(args) == 2:
+        print('non hai passato il secondo parametro '
+             'il file di output')
+    else: 
+        print('hai inserito tropi parametri. Ne servono 2.'
+              'il file di input e il file di output')
