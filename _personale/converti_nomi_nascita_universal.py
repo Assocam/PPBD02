@@ -26,7 +26,8 @@ def check_files(input_file, output_file_csv, output_file_txt):
         pass
     return True
 #-
-def open_file(input_path): # Apertura dei file con i dati iniziali
+def open_file(input_path): 
+# Apertura dei file con i dati iniziali
     with open(input_path, mode='r', encoding='utf-8') as  f:
         file = f.readlines()
         dati_file = {}
@@ -35,7 +36,8 @@ def open_file(input_path): # Apertura dei file con i dati iniziali
             dati_file[line[0]] = (line[1])
     return dati_file
 #-
-def conversion_data(dati_file): # conversione dei dati e creazione dei dizzionari.
+def conversion_data(dati_file): 
+# conversione dei dati e creazione dei dizzionari.
     anno_corrente = date.today().year
     dict_eta = {} # dict = {nome, eta}
     dict_sub = {} # dict = {eta, nomi di persone con quell'età}
@@ -50,7 +52,7 @@ def conversion_data(dati_file): # conversione dei dati e creazione dei dizzionar
     return dict_eta, dict_sub
 #-
 def file_csv(output_path_csv, dict_eta): 
-    # write of file txt, Eta, nomi delle persone con quell'età
+# write of file txt, Eta, nomi delle persone con quell'età
     with open(output_path_csv, mode='+w', encoding='utf-8') as f:
         file = f
         output_file = []
@@ -61,7 +63,7 @@ def file_csv(output_path_csv, dict_eta):
         file.writelines(output_file)
 #-
 def file_txt(output_path_txt, dict_sub): 
-    # write of file csv, Nome, Età, Anno di nascita
+# write of file csv, Nome, Età, Anno di nascita
     with open(output_path_txt, mode='+w', encoding='utf-8') as f:
         file = f
         file.write('Età: Persone\n')
