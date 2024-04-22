@@ -66,7 +66,7 @@ if __name__ == 'main':    # necessario per usare il codice in caso di importazio
             converti_file(input_path, output_path)
             path_assoluto = os.path.abspath(output_path)
             print(f'SUCCESSO! Il file è stato creato correttamente alla '
-                f'posizione {path_assoluto}')
+                  f'posizione {path_assoluto}')
 
 
         
