@@ -57,5 +57,7 @@ if __name__ == '__main__':
 	root.title('Matrix Animation')
 	root.config(bg= 'black')
 	#root.attributes('-fullscreen', True)
-	app = Matrix(root, 'Arial Unicode', 14)
+	app = Matrix(root, 'arial.ttf', 14)
+	#app = Matrix(root, 'ARIALUNI.TTF', 14)
+
 	app.mainloop()
