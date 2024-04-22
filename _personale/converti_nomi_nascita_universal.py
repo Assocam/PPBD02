@@ -61,6 +61,8 @@ def file_csv(output_path_csv, dict_eta):
             output_file.append(f'{e}, {dict_eta[e]}, Nato/a il{file[e]}\n')
         output_file.append('\n')
         file.writelines(output_file)
+        print("Il file è stato creato correttamente!"
+             f"La posizione è {output_path_csv}")
 #-
 def file_txt(output_path_txt, dict_sub): 
 # write of file csv, Nome, Età, Anno di nascita
@@ -70,6 +72,8 @@ def file_txt(output_path_txt, dict_sub):
         for e in sorted(dict_sub):
             file.writelines(f'{e}: {dict_sub[e]}\n')
         file.write('\n')
+        print("Il file è stato creato correttamente!"
+             f"La posizione è {output_path_txt}")
 #-
 #-Main()
 
