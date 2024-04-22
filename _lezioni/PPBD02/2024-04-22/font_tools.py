@@ -18,7 +18,7 @@ def _get_font_path(font_name):
     raise FileNotFoundError('Il font non è stato trovato.')
 
 def get_font_chars(font_name):
-    font_path = _get_font_path(font_name)
+    font_path = _get_font_path('arial')
     font = TTFont(font_path)
     cmap_table = font['cmap']  # Access the character mapping table
     characters = set()
