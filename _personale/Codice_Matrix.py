@@ -1,6 +1,7 @@
 from tkinter import Frame, Tk, Canvas
 from random import choice
 from font_tools import get_font_chars
+import matplotlib
 
 class Matrix(Frame):
 	def __init__(self, master, font_name, font_size):
