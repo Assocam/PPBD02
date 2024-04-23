@@ -1,0 +1,41 @@
+-(primo pilastro) "Eredietarietà" della classe esempio:
+classe veicolo genrica la si può specializzare in 
+una classe automobile, classe casa, più specifiche, eredito una caratteristica di
+una classe base, classe casa di metri quadri di elemento
+casa attico avrà metri quadri
+-(secondo pilastro) "Polimorfismo" è la capacità di una classe 
+che può essere istanziata esempio: classe attico gestita con una 
+classe casa, possibilità di trattare una classe come in ogni stanza ereditata in passato
+(Casa)<----->(Attico) situazione dove attico può essere usata come casa
+-Py non lo usa poco (terzo pilastro) "Incapsulamento" serve per decidere che alcune caratteristiche di qualche classe, non sono pubbliche 
+ma generalizzate (Casa)<----->(Attico) hanno i millesimi di appartenenza ad
+un condominio sta dentro la classe, Python lo ricorda che avere millesimi è pubblica con _millesimi_ è debolmente incapsulata 
+con __millesimi__ è fortemente capsulata
+-Py non lo usa (quarto pilastro) "Astrazione"  una classe a metodo atsratto si dichiara l'esistenza ma, non ha nessuna implementazione
+il compilatore dice che non è stato implementato, serve a verificare le idee riferite alla classe
+Sorgente, Monolitico e tutta la mappatura desiderata
+programmazione orientata agli eventi
+programmazione a oggetti: con piccoli codice oggetti, può avere una funzione strutturata o orientata agli eventi
+si ha una cosa complessa 
+Esempio class animale e proprietà ha le ali ed il pelo, costruendo un animale:
+pippo = animale (Pelo, Ali) il costruttore si chiama sempre "__init__(self)" è un'istanza per il costruttore
+"__init__(self, Ali, Pelo)" nel costruttore gli aggiungiamo ali e pelo
+successivamente si creano gli animali esempio "cane(animale)"
+si chiama "super().__init__(self)" si usa super, per gestire il costruttore della classe sopra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
