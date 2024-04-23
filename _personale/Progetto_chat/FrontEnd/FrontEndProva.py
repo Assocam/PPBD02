@@ -7,29 +7,30 @@ sys.path.append("C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_p
 
 from Classi.cChat import Chat
 from Classi.cMessaggio import Messaggio
+from Classi.cUtenti import Utente
 
 # Voglio impostare un messaggio e inizializzare la chat
 
-chat = Chat(1)  # Dobbiamo dargli un proprietario, per il momento 1 va bene
-msg = Messaggio(2, 3, 'Ti ho inviato un msg')
-chat.Aggiungi(msg)
-msg = Messaggio(2, 3, 'Ti ho risposto al msg')
-chat.Aggiungi(msg)
-msg = Messaggio(2, 3, 'Nuovo messaggio')
-chat.Aggiungi(msg)
-msg = Messaggio(2, 3, "Casomai non l'avessi capito")
-chat.Aggiungi(msg)
-msg = Messaggio(2, 3, 'E te lo dico ancora una volta')
-chat.Aggiungi(msg)
+# chat = Chat(1)  # Dobbiamo dargli un proprietario, per il momento 1 va bene
+# msg = Messaggio(2, 3, 'Ti ho inviato un msg')
+# chat.Aggiungi(msg)
+# msg = Messaggio(3, 2, 'Ti ho risposto al msg')
+# chat.Aggiungi(msg)
+# msg = Messaggio(3, 2, 'Nuovo messaggio')
+# chat.Aggiungi(msg)
+# msg = Messaggio(3, 2, "Casomai non l'avessi capito")
+# chat.Aggiungi(msg)
+# msg = Messaggio(3, 2, 'E te lo dico ancora una volta')
+# chat.Aggiungi(msg)
 
-msg.Invia() # Lo invia al Back-End!!!!!
+# msg.Invia() # Lo invia al Back-End!!!!!
 
-chat.Esporta()
+# chat.Esporta()
 
-print(chat.ChatList)
+# print(chat.ChatList)
 
 
-# Ora provo il DB
+# # Ora provo il DB
 
 # msg.Test()  # Costruisce il DB
 
@@ -37,3 +38,6 @@ print(chat.ChatList)
 #     msg.TestInsertUser('enr', 'ter', 'Enrico', f'Terzolo {x}')
 
 # msg.TestSelectUtenti()
+
+ut = Utente
+ut.DoLogin(ut, 'enr', 'ter')

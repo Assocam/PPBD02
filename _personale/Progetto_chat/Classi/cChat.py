@@ -80,7 +80,7 @@ class Chat:
 
         self.Svuota()
 
-        self.ChatList = []    # Intanto la lista è vuota
+        self.ChatList = []        # Intanto la lista è vuota
 
         chiavi = dizDati.keys()   # Le chiavi di un dizionario di dizionari sono dizionari
         
@@ -115,7 +115,7 @@ class Chat:
 
             dizExport[contaMessaggi] = {}
 
-            dizExport[contaMessaggi]['Mittente'] = m.Mittente              # dizExport[indice][chiave] = associa
+            dizExport[contaMessaggi]['Mittente'] = m.Mittente                    # dizExport[indice][chiave] = associa
             dizExport[contaMessaggi]['Destinatario'] = m.Destinatario
             dizExport[contaMessaggi]['Testo'] = m.Testo
             dizExport[contaMessaggi]['DTMessaggio'] = m.DTMessaggio.isoformat()

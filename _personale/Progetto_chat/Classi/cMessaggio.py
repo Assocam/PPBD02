@@ -38,7 +38,7 @@ class Messaggio:
         self.dicmsg['testo'] = self.Testo
 
         
-    '''
+    
     def Test(self):
 
         # Scrive sul DataBase i messaggi
@@ -137,7 +137,7 @@ class Messaggio:
 
         cur.close()
         conn.close()
-    '''
+    
 
     def Invia(self):
 
