@@ -3,8 +3,20 @@
 
 from flask import Flask, request
 import json
+import sys
+
+sys.path.append("C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\_personale\\Progetto_chat")
 
 import sqlite3  # Per il database
+import os
+
+from Classi.cConfig import Config
+
+cfg = Config("_personale\\Progetto_chat\\BackEnd\\app.config")
+cfg.LeggiConfig()
+
+conn = sqlite3.connect(cfg.DBFile)
+
 
 # Start
 chat = Flask('AppChat')
@@ -12,7 +24,20 @@ chat = Flask('AppChat')
 
 def CercaUtente(usr, pwd):
 
-    conn = sqlite3.connect('chat.db')
+    # # Queste tre righe vanno bene
+
+    # file_database = "chat.db"   
+    # cartella = os.getcwd()
+    # percorso_db = os.path.join(cartella, file_database)
+
+###############################################################################
+
+    # nomedb = os.path.abspath('chat.db')
+    # print(nomedb)
+
+#   conn = sqlite3.connect('chat.db')
+    conn = sqlite3.connect(cfg.DBFile)
+
     cur = conn.cursor()
 
     # "*" IN SQL = "ALL"
@@ -39,30 +64,38 @@ def CercaUtente(usr, pwd):
 
     else:
 
-        dictJson = 'Qualcosa non va'
-        retCode = 500
+        dictJson = 'Utente non trovato'
+        retCode = 404
 
 
     return dictJson, retCode
 
 
 # Quello che c'è sotto lo faccio su tutte le rotte
+# Tutte le rotte
 @chat.route('/login', methods = ['POST'])
 
 def FaiLogin():
 
+    retcode = 0
+    retdata = 'Ciccio'
+
     # da implementare
-
+    try:
     # recupero i dati:
-    datiJson = request.json
-    dati = json.loads(datiJson)
 
-    user = dati['USER']
-    pwd = dati['PASSWORD']
+        datiJson = request.json
+        dati = json.loads(datiJson)
 
-    # Chiamo CercaUtente(u, p)
+        user = dati['USER']
+        pwd = dati['PASSWORD']
 
-    retdata, retcode = CercaUtente(user,pwd)
+        # Chiamo CercaUtente(u, p)
+        retdata, retcode = CercaUtente(user,pwd)
+
+    except Exception as e:
+        retdata = "C'è qualche casino con i dati\n" + e.__repr__()
+        retcode = 500
 
     return retdata, retcode
 
