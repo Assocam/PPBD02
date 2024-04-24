@@ -12,6 +12,10 @@ import os
 
 from Classi.cConfig import Config
 
+# In app config il percorso era: C:\\Users\\lucas\\Desktop\\Python - Scuola Camerana\\PPBD02\\chat.db
+# In pratica in questo modo gli sto indicando la cartella del file database dove leggerla
+# Il vantaggio di usare la classe Config è che posso andare a indicare diversi database (app.config/app.config2)
+# O indicare diverse cose a back-end e front-end
 cfg = Config("_personale\\Progetto_chat\\BackEnd\\app.config")
 cfg.LeggiConfig()
 
