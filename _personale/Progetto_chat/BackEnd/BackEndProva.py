@@ -64,7 +64,10 @@ def FaiLogin():
 
     retdata, retcode = CercaUtente(user,pwd)
 
-   
+    return retdata, retcode
+
+
+
 
 @chat.route('/scriviMsg', methods = ['PUT', 'GET'])  # Se metto solo put mi da errore 500 - "Method not allowed"
 #                                                      Solo put per scrivere
