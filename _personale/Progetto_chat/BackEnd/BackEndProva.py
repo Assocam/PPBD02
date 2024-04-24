@@ -34,7 +34,7 @@ def CercaUtente(usr, pwd):
     # cartella = os.getcwd()
     # percorso_db = os.path.join(cartella, file_database)
 
-###############################################################################
+#################################################################################################################
 
     # nomedb = os.path.abspath('chat.db')
     # print(nomedb)
